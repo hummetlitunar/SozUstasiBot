@@ -237,7 +237,7 @@ def main():
     dp.add_handler(CommandHandler("master", command_master))
     dp.add_handler(CommandHandler("show_word", command_show_word))
     dp.add_handler(CommandHandler("change_word", command_change_word))
-    dp.add_handler(CommandHandler("sincab_rating", command_rating))
+    dp.add_handler(CommandHandler("sincab_rating", command_sincab_rating))
     dp.add_handler(CommandHandler("help", help))
     dp.add_handler(CommandHandler("start", command_start))
 
