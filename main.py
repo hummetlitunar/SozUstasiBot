@@ -179,7 +179,7 @@ def command_change_word(update, context):
     update.message.reply_text(word, reply_to_message_id=True)
 
 
-def command_rating(update, context):
+def command_sincab_rating(update, context):
     chat_id = update.message.chat.id
 
     game = get_or_create_game(chat_id)
@@ -205,7 +205,7 @@ def is_word_answered(update, context):
     word = game.get_current_word()
 
     if game.is_word_answered(user_id, text):
-        update.message.reply_text('*{}* sözünü [{}](tg://user?id={}) tapdı✅'.format(word, username,user_id), reply_to_message_id=True, parse_mode=ParseMode.MARKDOWN)
+        update.message.reply_text('*{}* sözünü [{}](tg://user?id={}) tapdı'.format(word, username,user_id), reply_to_message_id=True, parse_mode=ParseMode.MARKDOWN)
 
         game.update_rating(user_id, username)
 
@@ -237,7 +237,7 @@ def main():
     dp.add_handler(CommandHandler("master", command_master))
     dp.add_handler(CommandHandler("show_word", command_show_word))
     dp.add_handler(CommandHandler("change_word", command_change_word))
-    dp.add_handler(CommandHandler("rating", command_rating))
+    dp.add_handler(CommandHandler("sincab_rating", command_rating))
     dp.add_handler(CommandHandler("help", help))
     dp.add_handler(CommandHandler("start", command_start))
 
